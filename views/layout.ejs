@@ -1,0 +1,40 @@
+<!-- 全体のレイアウトを決めるファイル -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/stylesheets/reset.css" />
+    <link rel="stylesheet" href="/stylesheets/layout.css" />
+    <title>日々ノート</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-title">
+        <p class="header-main-title"><a href="/">日々ノート</a></p>
+        <p class="header-sub-title"><a href="/">～プログラミング知識集～</a></p>
+      </div>
+      <div class="header-bottom-bar">
+        <div class="header-bottom-bar-line"></div>
+        <div class="header-bottom-bar-line"></div>
+        <div class="header-bottom-bar-line"></div>
+      </div>
+    </header>
+
+    <div class="contents">
+
+      <!-- left-contents ----------------------------------->
+      <div class="left-contents">
+        <%- body %>
+      </div>
+
+      <!-- right-content ----------------------------------->
+      <div class="right-contents">
+    <!--  ↓  <%-  %>にすると右再度バー出現！ -->
+        <% include('components/right-contents') %>
+      </div>
+    </div>
+
+    <footer>
+      <p>©2022.04.12 All right reserve</p>
+    </footer>
+  </body>
+</html>

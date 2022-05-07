@@ -1,0 +1,43 @@
+<!-- 記事閲覧ページ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>日々ノート</title>
+    <link rel='stylesheet' href='/stylesheets/article.css' />
+    <link rel='stylesheet' href='/stylesheets/manage.css' />
+  </head>
+  <body>
+    <h1>管理画面ログイン</h1>
+
+    <form method="post" action="/manage/login">
+      <div class="form-group">
+        <label for="name">ユーザー名</label>
+        <input type="text" name="name" id="name">
+      </div>
+      <div class="form-group">
+        <label for="pass">パスワード</label>
+        <input type="password" name="pass" id="pass">
+      </div>
+      <div class="form-send-button">
+        <input type="submit" value="ログイン">
+      </div>
+    </form>
+
+    <!-- ユーザーの新規作成 -->
+    <!-- <form method="post" action="/manage/login/useradd">
+      <div class="form-group">
+        <label for="name">ユーザー名</label>
+        <input type="text" name="name" id="name">
+      </div>
+      <div class="form-group">
+        <label for="pass">パスワード</label>
+        <input type="password" name="pass" id="pass">
+      </div>
+      <div class="form-send-button">
+        <input type="submit" value="新規作成">
+      </div>
+    </form> -->
+
+    
+  </body>
+</html>

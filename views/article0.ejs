@@ -1,0 +1,128 @@
+<!-- 記事閲覧ページ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>日々ノート</title>
+    <link rel='stylesheet' href='/stylesheets/article.css' />
+  </head>
+  <body>
+
+    <!-- article-header ---------------------------------------------------------->
+    <div class="article-header">
+      <div class="date">2021.09.04</div>
+      <h1 class="article-header-title">ブログ作成の手順　AWS LightSail + WordPress</h1>
+      <p class="article-header-img">
+        <img src="https://tekutekku.com/wp-content/uploads/2021/09/top_makeblog.jpg">
+      </p>
+      <p class="article-header-img-source">Photo by Stephen Phillips – Hostreviews.co.uk on Unsplash</p>
+    </div>
+
+    <!-- article-content⓵ ------------------------------------------------------>
+    <div class="article-content">
+      <h2>この記事の内容</h2>
+      <p>
+        私が「AWS LightSail + WordPress」でブログを作成した際に参考にした記事を紹介します。
+        ブログ作成の手順に加え、必要な初期設定までの手順です。
+      </p>
+      <p>記事は下の手順に沿って並べています。</p>
+      <ul>
+        <li>①AWS LightSailにWordPressをインストール</li>
+        <li>②お名前.comで独自ドメイン取得</li>        
+        <li>③独自ドメインの紐づけ（お名前.com ⇔ AWS Route53)</li>        
+        <li>④独自ドメインの紐づけ（AWS route53 ⇔ AWS LightSail)、SSL化</li>        
+        <li>⑤WordPressの初期設定・始め方</li>
+      </ul>
+    </div>
+
+    <!-- article-content⓶ -->
+    <div class="article-content">
+      <h2>前提条件</h2>
+      <p>
+        ・AWSのアカウントを持っていること
+      </p>
+    </div>
+
+    <!-- article-content⓷ -->
+    <div class="article-content">
+      <h2>本題</h2>
+      <p>では、さっそく本題ですが、</p>
+      <p><span>
+        ①AWS LightSailにWordPressをインストール
+      </span></p>
+      <p>
+        手順解説記事のリンク：<br>
+        <a href="https://dev.classmethod.jp/articles/try-lightsail-wordpress/" target="_blank">
+          Amazon Lightsailを使って15分でWordPressを構築してみた
+        </a><br><br>
+        ※「構築」の部分だけでOKです。<br>
+        （「構築後に行うべきこと」は余裕があれば見てみてください）
+      </p>
+      <p>
+        【リンク先の記事で解説していること】<br>
+        ・AWS LightSailにWordPressをインストール<br>
+        ・AWS LightSailのIPアドレス静的化<br>
+        ・WordPressログインパスの確認方法
+      </p>
+      
+      <br><br><br>
+      <p><span>
+        ②お名前.comで独自ドメイン取得
+      </span></p>
+      <p>
+        手順解説記事のリンク：<br>
+        <a href="https://www.onamae.com/service/d-regist/" target="_blank">
+          お名前.comで独自ドメイン取得
+        </a><br><br>
+        ※リンク先の記事の「ドメイン登録方法」を参照ください。<br>
+        ※手順の「3レンタルサーバー・オプションを選択」では「利用しない」を選択してください。<br>
+        ※オプションは任意（私は何もつけていません。）
+      </p>
+
+      <br><br><br>
+      <p><span>
+        ③独自ドメインの紐づけ（お名前.com ⇔ AWS Route53)
+      </span></p>
+      <p>
+        手順解説記事のリンク：<br>
+        <a href="https://dev.classmethod.jp/articles/route53-domain-onamae/" target="_blank">
+          お名前.comで取得したドメインをRoute53のネームサーバで管理設定してみた
+        </a>
+      </p>
+
+      <br><br><br>
+      <p><span>
+        ④独自ドメインの紐づけ（AWS route53 ⇔ AWS LightSail)、SSL化
+      </span></p>
+      <p>
+        手順解説記事のリンク：<br>
+        <a href="https://qiita.com/tomokei5634/items/a5dfb8504989ed93c31b" target="_blank">
+          【初心者】AWSのLightsailでIP固定化と独自ドメインの紐付けとSSL化
+        </a><br><br>
+        ※手順１の「IPを固定する（LightsailのIP固定化（静的化））」はスキップし、
+        手順２の「独自ドメインと静的IP（固定化したIP）との紐付け」から進めてください。
+      </p>
+
+      <br><br><br>
+      <p><span>
+        ⑤WordPressの初期設定・始め方
+      </span></p>
+      <p>
+        手順解説記事のリンク：<br>
+        <a href="https://www.xserver.ne.jp/blog/wordpress-initial-setting/#%E3%83%96%E3%83%AD%E3%82%B0%E3%82%92%E6%9B%B8%E3%81%8F%E5%89%8D%E3%81%AB%E5%BF%85%E3%81%9A%E8%A1%8C%E3%81%86%E8%A8%AD%E5%AE%9A" target="_blank">
+          初心者向け】WordPressブログを書き始める前に済ませたい初期設定13個
+        </a><br><br>
+        ※「ブログを書く前に必ず行う設定」の「４．SSLの設定（ポイント）」は既にやったの
+        で、ここではスキップしてください。
+    </div>
+
+    <!-- article-content⓸ -->
+    <div class="article-content">
+      <h2>おわりに</h2>
+      <p>
+        これででAWS LightSail + WordPressでのブログ環境が整い、初期設定をしながらWordPressの操作にも触れました。<br><br>
+        最初は戸惑うことも多いかと思いますが、WordPressはネット上に情報が多くありますのでゆっくりゆっくり操作を覚えて
+        ブログを楽しんでください。
+      </p>
+    </div>
+  </body>
+</html>

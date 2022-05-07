@@ -1,0 +1,54 @@
+@import "layout";  //layoutに記載の変数が使用できるようになる。
+
+.article-header{
+  .date{
+    font-size: $font-size-small;
+  }
+  .article-header-title{
+    margin: 30px 0;
+    font-size: $font-size-big;
+    font-weight: bold;
+  }
+  .article-header-img{
+    max-width: 640px;
+    img{
+      object-fit: contain;
+    }
+  }
+  .article-header-img-source{
+    font-size: $font-size-small;
+  }
+}
+
+.article-content{
+  margin: 100px 0;
+  a{
+    text-decoration: underline;
+    color: blue;
+  }
+  h2{
+    margin-bottom: 30px;
+    padding-left: 5px;
+    border-left: 12px solid $layout-bg-color;
+    border-bottom: 3px double $layout-bg-color;
+    font-size: $font-size-big;
+    font-weight: bold;
+  }
+  p{
+    line-height: $font-size-small*2;
+    margin-bottom: 30px;
+
+  }
+  ul{
+    margin: 30px 0;
+    padding: 20px 10px;
+    line-height: $font-size-small*2.5;
+    background-color: rgba(0,0,112,0.08);
+    border: 3px solid $layout-bg-color;
+  }
+  span{
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 2px solid $layout-bg-color;
+  }
+}

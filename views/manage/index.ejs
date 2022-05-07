@@ -1,0 +1,36 @@
+<!-- ブログのトップページ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>日々ノート</title>
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <link rel='stylesheet' href='/stylesheets/manage.css' />
+  </head>
+  <body>
+
+    <!-- left-content ----------------------------------------------------------------->
+    <form method="get" action="/manage/article/add">
+      <div class="form-send-button">
+        <input type="submit" value="新規作成">
+      </div>
+    </form><br><br><br><br>
+
+    <h1 class="left-content-title">～～～　記事一覧　～～～</h1>
+    
+    <% for(var i in contents) { %>
+      <div class="card">
+        <a href="/manage/article/edit?id=<%= contents[i].id %>"></a>
+        <div class="card-title"><%= contents[i].title %></div>
+        <div class="card-content">
+          <div class="card-content-img">
+            <img src="<%= contents[i].headerimg %>"> 
+          </div>
+        </div>
+      </div>
+    <% } %>
+      
+
+  </body>
+</html>

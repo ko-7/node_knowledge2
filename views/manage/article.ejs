@@ -1,0 +1,78 @@
+<!-- 記事閲覧ページ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>日々ノート</title>
+    <link rel='stylesheet' href='/stylesheets/article.css' />
+    <link rel='stylesheet' href='/stylesheets/manage.css' />
+  </head>
+  <body>
+    <form method="post" action="/manage/article/<%= path %>">
+      <input type="hidden" name="id" value="<%= form.id %>">
+      <!-- article-header ---------------------------------------------------------->
+      <div class="article-header">
+        <div class="form-group">
+          <label for="status">
+          <input type="checkbox" name="status" id="status" selected="<%= form.status %>">
+          公開する</label>
+        </div>
+        <div class="form-group date">
+          <label for="date">作成・編集日時</label>
+          <input type="text" name="date" id="date" value="<%= form.date %>">
+        </div>
+        <div class="form-group date">
+          <label for="genre">ジャンル</label>
+          <input type="text" name="genre" id="genre" value="<%= form.genre %>">
+        </div>
+        <div class="form-group">
+          <label for="title">記事タイトル</label>
+          <h1 class="article-header-title">
+            <input type="text" name="title" id="title" value="<%= form.title %>">
+          </h1>
+        </div>
+        <div class="form-group">
+          <label for="headerimg">ヘッダー画像URL</label>
+          <input type="text" name="headerimg" id="headerimg" value="<%= form.headerimg %>">
+        </div>
+      </div>
+
+      <!-- article-content -->
+      <div class="form-group">
+        <label for="body">記事本文</label>
+        <textarea name="body" id="body" rows="30"><%= form.body %></textarea>
+      </div>
+
+      <!-- 送信ボタン -->
+      <div class="form-send-button">
+        <input type="submit" value="保存">
+      </div>
+
+    </form>
+
+    <button class="deletebutton" onclick="articledelete()">削除</button>
+    <!-- <div class="deletewindow" id="deletewindow">
+
+      <form method="post" action="/manage/article/delete" id="deletebutton">
+        <div class="form-send-button">
+          <input type="submit" value="削除">
+        </div>
+      </form>
+    </div> -->
+
+    <script>
+      // 読み込んだ記事が公開済みならstatusチェックボックスにチェックを入れる
+      if (<%= form.status %> === true) {
+        let el = document.getElementById('status')
+        el.setAttribute("checked","checked")
+      }
+
+      function articledelete(){
+        let judge = confirm("記事を削除して良いですか")
+        if (judge == true){
+          var xhr = new XMLHttpRequest();
+          console.log('はいが押されました')
+        }
+      }
+    </script>
+  </body>
+</html>
