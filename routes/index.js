@@ -13,7 +13,13 @@ router.get('/', function(req, res, next) {
       contents: articles
     }
     res.render('index', data);
-  });
+  }).catch(err => {
+    let data = {
+      err: err
+    }
+    console.log('error')
+    res.render('index', data);
+  })
 });
 
 router.get('/article', function(req, res, next) {
