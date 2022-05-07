@@ -10,7 +10,13 @@ router.get('/', function(req, res, next) {
       contents: articles
     }
     res.render('manage/index', data);
-  });
+  })
+  .catch(err => {
+    var data = {
+      err: err
+    }
+    res.render('users/add', data);
+  })
 });
 
 
