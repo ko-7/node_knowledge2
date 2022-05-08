@@ -27,7 +27,7 @@ router.get('/article/add', function(req, res, next) {
   let data = {
     //formの値はeditとaddで同じejsファイル使用してもエラー出ないようにするためのフェイクデータ。
     form: {id: 0,status: null,date: null,genre: null,title: null,headerimg:null,body: null},
-    path: 'add'
+    path: "add"
   }
   res.render('manage/article', data);
 });
