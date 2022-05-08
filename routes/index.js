@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
     }
   }).then(articles => {
     var data = {
-      contents: articles
+      contents: articles[0]
     }
     res.render('index', data);
   }).catch(err => {

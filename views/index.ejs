@@ -12,7 +12,7 @@
     <!-- left-content ----------------------------------------------------------------->
     <h1 class="left-content-title">～～～　記事一覧　～～～</h1>
 
-    <% for(let i in data.contents){ %>
+    <% for(let i in contents){ %>
       <div class="card">
         <a href="/article?id=<%= contents[i].id %>"></a>
         <div class="card-title"><%= contents[i].title %></div>
