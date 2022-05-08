@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/index');
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
   db.Article.findAll({
     where: {//status=trueのものだけ取得
@@ -10,7 +9,7 @@ router.get('/', function(req, res, next) {
     }
   }).then(articles => {
     var data = {
-      contentss: articles
+      contents: articles
     }
     res.render('index', data);
   }).catch(err => {
