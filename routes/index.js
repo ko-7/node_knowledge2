@@ -8,15 +8,16 @@ router.get('/', function(req, res, next) {
       status: true
     }
   }).then(articles => {
-    var data = {
-      contents: articles[0]
+    let data = {
+      contents: articles
     }
     res.render('index', data);
   }).catch(err => {
     let data = {
-      err: err
+      err: err,
+      contents: null
     }
-    console.log('error')
+    console.log('db error!!')
     res.render('index', data);
   })
 });
