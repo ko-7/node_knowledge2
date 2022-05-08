@@ -29,7 +29,11 @@ router.get('/article/add', function(req, res, next) {
     form: {id: 0,status: null,date: null,genre: null,title: null,headerimg:null,body: null},
     path: "add"
   }
-  res.render('manage/article', data);
+  // res.render('manage/article', data);
+  res.render('manage/article', {
+    form: {id: 0,status: null,date: null,genre: null,title: null,headerimg:null,body: null},
+    path: "add"
+  });
 });
 router.post('/article/add', (req, res, next) => {
   if (logincheck(req, res)){ return };
