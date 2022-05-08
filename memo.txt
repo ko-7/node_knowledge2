@@ -49,14 +49,3 @@
       </html>
 
 
-<% for(let i in contents){ %>
-      <div class="card">
-        <a href="/article?id=<%= contents[i].id %>"></a>
-        <div class="card-title"><%= contents[i].title %></div>
-        <div class="card-content">
-          <div class="card-content-img">
-            <img src="<%= contents[i].headerimg %>"> 
-          </div>
-        </div>
-      </div>
-    <% } %>

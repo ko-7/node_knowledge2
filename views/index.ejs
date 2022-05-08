@@ -12,15 +12,17 @@
     <!-- left-content ----------------------------------------------------------------->
     <h1 class="left-content-title">～～～　記事一覧　～～～</h1>
 
+    <% for(let i in data.contents){ %>
       <div class="card">
-        <a href="/article"></a>
-        <div class="card-title">ブログ作成の手順　AWS LightSail + WordPress</div>
+        <a href="/article?id=<%= contents[i].id %>"></a>
+        <div class="card-title"><%= contents[i].title %></div>
         <div class="card-content">
           <div class="card-content-img">
-            <img src="https://tekutekku.com/wp-content/uploads/2021/09/top_makeblog.jpg"> 
+            <img src="<%= contents[i].headerimg %>"> 
           </div>
         </div>
       </div>
+    <% } %>
 
   </body>
 </html>
