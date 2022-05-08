@@ -31,7 +31,8 @@ router.get('/article', function(req, res, next) {
     res.render('article', data);
   }).catch(err => {
     let data = {
-      err: err
+      err: err,
+      form: null,
     }
     console.log('error')
     res.render('index', data);

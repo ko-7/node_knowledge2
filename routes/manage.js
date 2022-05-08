@@ -12,7 +12,8 @@ router.get('/', function(req, res, next) {
     res.render('manage/index', data);
   }).catch(err => {
     var data = {
-      err: err
+      err: err,
+      contents: null
     }
     res.render('manage', data);
   });
@@ -42,7 +43,7 @@ router.post('/article/add', (req, res, next) => {
   };
   db.sequelize.sync()
     .then(() => db.Article.create(form)
-      .then(usr => {
+      .then(article => {
         res.redirect('/manage')
       })
       .catch(err => {
