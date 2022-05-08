@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
 // 記事ページ　新規作成-----------------------------------------
 router.get('/article/add', function(req, res, next) {
   if (logincheck(req, res)){ return };
-  let data = {
+  var data = {
     //formの値はeditとaddで同じejsファイル使用してもエラー出ないようにするためのフェイクデータ。
     form: {id: 0,status: null,date: null,genre: null,title: null,headerimg:null,body: null},
     path: "add"
@@ -47,7 +47,7 @@ router.post('/article/add', (req, res, next) => {
         res.redirect('/manage')
       })
       .catch(err => {
-        let data = {
+        var data = {
           form: form,
           err: err
         }
@@ -62,7 +62,7 @@ router.get('/article/edit', function(req, res, next) {
   if (logincheck(req, res)){ return };
   db.Article.findByPk(req.query.id)
   .then(article => {
-    let data = {
+    var data = {
       form: article,
       path: 'edit'
     }
@@ -129,7 +129,7 @@ router.post('/login', (req, res, next) => {
   }).then(usr => {
     if (usr != null){
       req.session.login = usr;
-      let back = req.session.back;
+      var back = req.session.back;
       if (back == null){
         back = '/manage';
       }
