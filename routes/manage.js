@@ -52,7 +52,7 @@ router.post('/article/add', (req, res, next) => {
           err: err,
           path: "add"
         }
-        console.log('error')
+        console.log('error');
         res.render('manage/article', data);
       })
     );
