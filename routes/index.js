@@ -28,6 +28,12 @@ router.get('/article', function(req, res, next) {
       form: article,
     }
     res.render('article', data);
+  }).catch(err => {
+    let data = {
+      err: err
+    }
+    console.log('error')
+    res.render('index', data);
   })
 });
 

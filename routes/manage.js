@@ -10,6 +10,11 @@ router.get('/', function(req, res, next) {
       contents: articles
     }
     res.render('manage/index', data);
+  }).catch(err => {
+    var data = {
+      err: err
+    }
+    res.render('manage', data);
   });
 });
 
@@ -61,7 +66,12 @@ router.get('/article/edit', function(req, res, next) {
       path: 'edit'
     }
     res.render('manage/article', data);
-  })
+  }).catch(err => {
+    var data = {
+      err: err
+    }
+    res.render('manage', data);
+  });
 });
 router.post('/article/edit', function(req, res, next){
   if (logincheck(req, res)){ return };
@@ -76,30 +86,29 @@ router.post('/article/edit', function(req, res, next){
   },
   {
     where: {id: req.body.id}
-  }))
-  .then(article => {
+  })).then(article => {
     res.redirect('/manage');
-  })
+  }).catch(err => {
+    var data = {
+      err: err
+    }
+    res.render('manage', data);
+  });
 })
 
 // 記事ページ　削除---------------------------------------------
-router.get('/delete', (req, res, next) => {
-  db.User.findByPk(req.query.id)
-  .then(usr => {
-    var data = {
-      title: 'Users/Delete',
-      form: usr
-    }
-    res.render('users/delete', data);
-  });
-});
 router.post('/delete', (req, res, next) => {
   db.sequelize.sync()
   .then(() => db.User.destroy({
     where: {id: req.body.id}
   }))
-  .then(usr => {
-    res.redirect('/users');
+  .then(article => {
+    res.redirect('/manage');
+  }).catch(err => {
+    var data = {
+      err: err
+    }
+    res.render('manage', data);
   });
 });
 
@@ -130,6 +139,11 @@ router.post('/login', (req, res, next) => {
       }
       res.render('manage/login', data);
     }
+  }).catch(err => {
+    var data = {
+      err: err
+    }
+    res.render('manage/login', data);
   })
 });
 
