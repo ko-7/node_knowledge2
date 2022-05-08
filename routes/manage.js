@@ -29,11 +29,8 @@ router.get('/article/add', function(req, res, next) {
     form: {id: 0,status: null,date: null,genre: null,title: null,headerimg:null,body: null},
     path: "add"
   }
-  // res.render('manage/article', data);
-  res.render('manage/article', {
-    form: {id: 0,status: null,date: null,genre: null,title: null,headerimg:null,body: null},
-    path: "add"
-  });
+  console.log(path);
+  res.render('manage/article', data);
 });
 router.post('/article/add', (req, res, next) => {
   if (logincheck(req, res)){ return };
@@ -53,7 +50,8 @@ router.post('/article/add', (req, res, next) => {
       .catch(err => {
         var data = {
           form: form,
-          err: err
+          err: err,
+          path: "add"
         }
         console.log('error')
         res.render('manage/article', data);
