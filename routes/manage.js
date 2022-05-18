@@ -34,6 +34,7 @@ router.get('/article/add', function(req, res, next) {
 router.post('/article/add', (req, res, next) => {
   if (logincheck(req, res)){ return };
   const form = {
+    // 「req.body.～」でformから値受け取る
     status: req.body.status,
     date: req.body.date,
     genre: req.body.genre,
@@ -45,6 +46,7 @@ router.post('/article/add', (req, res, next) => {
     .then(() => db.Article.create(form)
       .then(article => {
         res.redirect('/manage')
+        console.log('add complete !!');
       })
       .catch(err => {
         var data = {
@@ -52,7 +54,7 @@ router.post('/article/add', (req, res, next) => {
           err: err,
           path: "add"
         }
-        console.log('error');
+        console.log('add error !!');
         res.render('manage/article', data);
       })
     );
@@ -94,23 +96,26 @@ router.post('/article/edit', function(req, res, next){
     var data = {
       err: err
     }
-    res.render('manage', data);
+    res.render('manage/article/edit', data);
   });
 })
 
 // 記事ページ　削除---------------------------------------------
 router.post('/delete', (req, res, next) => {
   db.sequelize.sync()
-  .then(() => db.User.destroy({
-    where: {id: req.body.id}
+  .then(() => db.Article.destroy({
+    // パラメータで値を受け取る
+    where: {id: req.query.id}
   }))
   .then(article => {
-    res.redirect('/manage');
+    // res.redirect('/manage');
+    console.log('delete complete !!');
   }).catch(err => {
     var data = {
       err: err
     }
-    res.render('manage', data);
+    res.render('manage/article/edit', data);
+    console.log('delete error !!')
   });
 });
 
