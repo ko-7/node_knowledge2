@@ -21,9 +21,8 @@ app.set('port', port);
  */
 
 // http ⇒　httpsリダイレクト---------------------
-// var server = http.createServer(app);
 app.use(enforce.HTTPS({ trustProtoHeader: true }))
-http.createServer(app)
+var server = http.createServer(app);  //元はこの1行のみ
 // ----------------------------------------------------                                                                             
 
 
