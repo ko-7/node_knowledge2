@@ -7,8 +7,6 @@
 var app = require('../app');
 var debug = require('debug')('knowledge2:server');
 var http = require('http');
-// var https = require('https'); //http ⇒ httpsへのリダイレクトに使用
-// var fs = require('fs');       //http ⇒ httpsへのリダイレクトに使用
 
 /**
  * Get port from environment and store in Express.
@@ -20,17 +18,11 @@ app.set('port', port);
 /**
  * Create HTTP server.
  */
-// ------------http ⇒ https---------------------------------
-// var server = http.createServer(app); //元はこの1行のみ
-// HTTPSサーバー起動                                                                               
-var fs = require('fs');
-var https = require('https');
-var options = {
-  key:  fs.readFileSync('../lets_encript.key'),
-  cert: fs.readFileSync('../lets_encript_fullchain.crt')
-};
-var server = https.createServer(options,app);
-// ---------------------------------------------
+
+var server = http.createServer(app);
+
+                                                                             
+
 
 /**
  * Listen on provided port, on all network interfaces.

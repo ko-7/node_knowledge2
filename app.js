@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
 const expressLayouts = require('express-ejs-layouts');
+var enforce = require('express-sslify');　//http ⇒　httpsリダイレクトに使用
 
 var indexRouter = require('./routes/index');
 var manageRouter = require('./routes/manage');
@@ -21,7 +22,12 @@ app.use(function(req, res, next) {
   next();
 });
 
-
+// http ⇒　httpsリダイレクト
+app.use(enforce.HTTPS());
+ 
+http.createServer(app).listen(app.get('port'), function() {
+    console.log('Express server listening on port ' + app.get('port'));
+});
 
 // express-ejs-layouts
 app.use(expressLayouts);

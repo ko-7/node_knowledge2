@@ -47,3 +47,10 @@
           <%- body %>
         </body>
       </html>
+
+〇http ⇒　httpsのリダイレクト
+　Herokuではリダイレクトしてくれないので、Expressでやる必要有り！
+  (参考)Heroku公式の案内　　：https://help.heroku.com/J2R1S4T8/can-heroku-force-an-application-to-use-ssl-tls
+  (参考)express-sslifyページ：https://www.npmjs.com/package/express-sslify
+　手順１：npm install express-sslify
+　手順２：
