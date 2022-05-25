@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('knowledge2:server');
 var http = require('http');
+var https = require('https');
 
 /**
  * Get port from environment and store in Express.
@@ -18,8 +19,13 @@ app.set('port', port);
 /**
  * Create HTTP server.
  */
-
-var server = http.createServer(app);
+// ------------http ⇒ https---------------------------------
+// var server = http.createServer(app); //元はこの1行のみ
+http.createServer((express()).all("*", function(request, response){ //追加
+  response.redirect(`https://${request.hostname}${request.url}`);   //追加
+})).listen(80);                                                     //追加
+var server = https.createServer(option, app).listen(433);           //追加
+// ---------------------------------------------
 
 /**
  * Listen on provided port, on all network interfaces.
