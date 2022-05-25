@@ -21,10 +21,10 @@ app.set('port', port);
  */
 // ------------http ⇒ https---------------------------------
 // var server = http.createServer(app); //元はこの1行のみ
-http.createServer((express()).all("*", function(request, response){ //追加
-  response.redirect(`https://${request.hostname}${request.url}`);   //追加
-})).listen(80);                                                     //追加
-var server = https.createServer(options, app).listen(433);           //追加
+// http.createServer((express()).all("*", function(request, response){ //追加
+//   response.redirect(`https://${request.hostname}${request.url}`);   //追加
+// })).listen(80);                                                     //追加
+var server = https.createServer(app).listen(433);           //追加
 // ---------------------------------------------
 
 /**
