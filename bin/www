@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('knowledge2:server');
 var http = require('http');
+var enforce = require('express-sslify');　//http ⇒　httpsリダイレクトに使用
 
 /**
  * Get port from environment and store in Express.
@@ -19,9 +20,13 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
-
-                                                                             
+// http ⇒　httpsリダイレクト---------------------
+// var server = http.createServer(app);
+app.use(enforce.HTTPS({ trustProtoHeader: true }))
+http.createServer(app).listen(app.get('port'), function() {
+    console.log('Express server listening on port ' + app.get('port'));
+});
+// ----------------------------------------------------                                                                             
 
 
 /**
