@@ -7,7 +7,6 @@
 var app = require('../app');
 var debug = require('debug')('knowledge2:server');
 var http = require('http');
-var enforce = require('express-sslify');　//http ⇒　httpsリダイレクトに使用
 
 /**
  * Get port from environment and store in Express.
@@ -20,9 +19,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-// http ⇒　httpsリダイレクト---------------------
-var server = http.createServer(app);  //元はこの1行のみ
-// ----------------------------------------------------                                                                             
+var server = http.createServer(app);
 
 
 /**

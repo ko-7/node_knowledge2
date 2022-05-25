@@ -27,8 +27,7 @@
   　読み込み方：process.env.[環境変数]
   　Ex）PORT = process.env.PORT
 　完了！「npm run dev」でアプリをスタートさせる！
-　※これはDB動作確認後にやる！
-　※Githubにあげる前にやる！
+　※これはDB動作確認後にやる！Githubにあげる前にやる！
 
 〇共通レイアウトの導入　https://qiita.com/kanye__east/items/87172e946471b9c71cfa
 　1)パッケージのインストール
@@ -53,4 +52,12 @@
   (参考)Heroku公式の案内　　：https://help.heroku.com/J2R1S4T8/can-heroku-force-an-application-to-use-ssl-tls
   (参考)express-sslifyページ：https://www.npmjs.com/package/express-sslify
 　手順１：npm install express-sslify
-　手順２：
+　手順２：app.jsに以下追加　※requireが並んでるとこに一緒に書く！
+　　　var http = require('http');
+      var enforce = require('express-sslify');
+  手順３：app.jsの「var app = express();」以下に以下のコード追加
+      //app.use(enforce.HTTPS());   //通常はこっちを使う！
+      app.use(enforce.HTTPS({ trustProtoHeader: true }))  //ReverseProxiesがある場合はこっち使う（Herokuなど
+      http.createServer(app).listen(app.get('port'), function() {
+          console.log('Express server listening on port ' + app.get('port'));
+      });
