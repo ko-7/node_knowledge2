@@ -25,7 +25,7 @@ var express = require('express');
 http.createServer((express()).all("*", function(request, response){ //追加
   response.redirect(`https://${request.hostname}${request.url}`);   //追加
 })).listen(80);                                                     //追加
-console.log(${request.hostname}${request.url});
+console.log(request.hostname+ "::test::" +request.url);
 var server = https.createServer(options, app);
 // ---------------------------------------------
 
