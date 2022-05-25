@@ -3,6 +3,16 @@
 <html>
   <head>
     <% include('components/google-analytics-code') %>
+    <!-- Global site tag (gtag.js) - Google Analytics 参考：https://support.google.com/analytics/answer/1008080?hl=ja&visit_id=637890272820029147-2340217469&rd=1#zippy=%2C%E3%81%93%E3%81%AE%E8%A8%98%E4%BA%8B%E3%81%AE%E5%86%85%E5%AE%B9 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D9DGBNPV3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-D9DGBNPV3J');
+      console.log('googleanalitics start!!!!')
+    </script>
 
     <link rel="stylesheet" href="/stylesheets/reset.css" />
     <link rel="stylesheet" href="/stylesheets/layout.css" />
