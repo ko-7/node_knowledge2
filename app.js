@@ -15,7 +15,7 @@ var manageRouter = require('./routes/manage');
 var app = express();
 
 // http https リダイレクト----------
-app.use(enforce.HTTPS());
+app.use(enforce.HTTPS({ trustProtoHeader: true }))
 http.createServer(app).listen(app.get('port'), function() {
     console.log('Express server listening on port ' + app.get('port'));
 });
