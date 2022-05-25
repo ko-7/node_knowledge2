@@ -57,7 +57,7 @@
       var enforce = require('express-sslify');
   手順３：app.jsの「var app = express();」以下に以下のコード追加
       //app.use(enforce.HTTPS());   //通常はこっちを使う！
-      app.use(enforce.HTTPS({ trustProtoHeader: true }))  //ReverseProxiesがある場合はこっち使う（Herokuなど
+      app.use(enforce.HTTPS({ trustProtoHeader: true }))  //ReverseProxiesがある場合はこっち使う（Herokuなど）
       http.createServer(app).listen(app.get('port'), function() {
           console.log('Express server listening on port ' + app.get('port'));
       });
