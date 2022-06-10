@@ -2,10 +2,11 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.addColumn('Articles', 'headerimg', {
-        type: Sequelize.STRING
-      }
-    )
+    await queryInterface.addColumn('Articles', 'headerimgsource', {
+      type: Sequelize.STRING,
+      after: 'headerimg'
+    }
+  )
   },
 
   async down (queryInterface, Sequelize) {

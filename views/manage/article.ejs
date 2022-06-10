@@ -34,6 +34,10 @@
           <label for="headerimg">ヘッダー画像URL</label>
           <input type="text" name="headerimg" id="headerimg" value="<%= form.headerimg %>">
         </div>
+        <div class="form-group">
+          <label for="headerimgsource">ヘッダー画像の出典</label>
+          <input type="text" name="headerimgsource" id="headerimgsource" value="<%= form.headerimgsource %>">
+        </div>
       </div>
 
       <!-- article-content -->
@@ -78,7 +82,7 @@
           xhr.send("string");
 
           // delete後に画面遷移する
-          window.location.href = 'http://localhost:3000/manage'
+          window.location.href = '/'
         }
       }
     </script>

@@ -26,7 +26,7 @@ router.get('/article/add', function(req, res, next) {
   if (logincheck(req, res)){ return };
   var data = {
     //formの値はeditとaddで同じejsファイル使用してもエラー出ないようにするためのフェイクデータ。
-    form: {id: 0,status: null,date: null,genre: null,title: null,headerimg:null,body: null},
+    form: {id: 0, status: null, date: null, genre: null, title: null, headerimg:null, herderimgsource:null, body: null},
     path: "add"
   }
   res.render('manage/article', data);
@@ -40,6 +40,7 @@ router.post('/article/add', (req, res, next) => {
     genre: req.body.genre,
     title: req.body.title,
     headerimg: req.body.headerimg,
+    headerimgsource: req.body.headerimgsource,
     body: req.body.body
   };
   db.sequelize.sync()
@@ -86,6 +87,7 @@ router.post('/article/edit', function(req, res, next){
     genre: req.body.genre,
     title: req.body.title,
     headerimg: req.body.headerimg,
+    headerimgsource: req.body.headerimgsource,
     body: req.body.body
   },
   {
@@ -96,6 +98,7 @@ router.post('/article/edit', function(req, res, next){
     var data = {
       err: err
     }
+    console.log("db error")
     res.render('manage/article/edit', data);
   });
 })

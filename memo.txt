@@ -1,7 +1,3 @@
-〇タスク
-・レスポンシブ対応
-・管理画面作成
-
 〇Databese
 　DB:knowledge2
 　Table
@@ -56,8 +52,18 @@
 　　　var http = require('http');
       var enforce = require('express-sslify');
   手順３：app.jsの「var app = express();」以下に以下のコード追加
-      //app.use(enforce.HTTPS());   //通常はこっちを使う！
+      //app.use(enforce.HTTPS());                         //通常はこっちを使う！
       app.use(enforce.HTTPS({ trustProtoHeader: true }))  //ReverseProxiesがある場合はこっち使う（Herokuなど）
       http.createServer(app).listen(app.get('port'), function() {
           console.log('Express server listening on port ' + app.get('port'));
       });
+
+〇Sequelizeでカラム追加の手順
+手順１：マイグレーションファイルの作成
+　　npx sequelize-cli migration:generate --name [任意のマイグレーションファイル名]　※何の変更するかわかるようにファイル名をつける！
+手順２：/migrationst直下に作成されるマイグレーションファイルを編集
+手順３：migration実行
+　　npx sequelize-cli db:migrate --env development
+    ※1つ戻る：npx sequelize-cli db:migrate:undo --env development
+    ※全部戻る：npx sequelize-cli db:migrate:undo:all (--to xxxxxxxxx-create-post.js) ()内追加で特定の位置に戻る！
+手順４：models/～.jsの編集
