@@ -218,6 +218,7 @@ footer {
 .article-content table th {
   background-color: #000070;
   color: white;
+  text-align: center;
 }
 
 .article-content table th, .article-content table td {
