@@ -1,10 +1,12 @@
 {
   "development": {
-    "username": "wsluser",
-"password": "postgre",
-"database": "knowledge2",
-"host": "127.0.0.1",
-"dialect": "postgres"
+    "use_env_variable": "DATABASE_URL",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   },
   "test": {
     "use_env_variable": "DATABASE_URL",
