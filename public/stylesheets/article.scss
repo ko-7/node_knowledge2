@@ -46,6 +46,17 @@
     background-color: rgba(0,0,112,0.08);
     border: 3px solid $layout-bg-color;
   }
+  table{
+    border-collapse: collapse;
+    th{
+      background-color: #000070;
+      color: white;
+    }
+    th, td{
+      border: solid 1px #000070;
+      padding: 10px;
+    }
+  }
   span{
     font-size: 18px;
     font-weight: bold;
