@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/stylesheets/layout.css" />
     <link rel='stylesheet' href='/stylesheets/index.css' />
     <link rel='stylesheet' href='/stylesheets/article.css' />
+    <link rel='stylesheet' href='/stylesheets/manage.css' />
     <title>日々ノート</title>
   </head>
   <body>
@@ -40,8 +41,8 @@
 
       <!-- right-content ----------------------------------->
       <div class="right-contents">
-        <!--  ↓  <%-  %>にすると右サイドバー出現！ -->
-        <% include('components/right-contents') %>
+        <!--  ↓  <%-  %>にすると右サイドバー出現！ components/right-contents　-->
+        <%- include('components/right-contents') %>
       </div>
     </div>
 

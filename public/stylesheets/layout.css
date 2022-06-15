@@ -1,7 +1,13 @@
 @charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
-  font-family: "游ゴシック", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif, serif;
+  font-family: Noto, "游ゴシック", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif, serif;
   color: black;
+  background-color: #f5f5f5;
 }
 
 body p {
@@ -25,6 +31,9 @@ header {
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 1px solid #aaa;
+  background-color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 header a {
@@ -51,19 +60,19 @@ header .header-title {
 
 @media screen and (max-width: 992px) {
   header .header-title {
-    width: 750px;
+    width: 640px;
   }
 }
 
 @media screen and (max-width: 750px) {
   header .header-title {
-    padding: 0 10px;
+    width: 100%;
     text-align: center;
   }
 }
 
 header .header-title .header-main-title {
-  font-size: 24px;
+  font-size: 22px;
   color: black;
 }
 
@@ -109,11 +118,16 @@ header .header-bottom-bar .header-bottom-bar-line {
 @media screen and (max-width: 992px) {
   .contents {
     width: 750px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
 @media screen and (max-width: 750px) {
   .contents {
+    width: 100%;
     padding: 0 10px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -123,12 +137,26 @@ header .header-bottom-bar .header-bottom-bar-line {
 }
 
 .contents .left-contents {
-  width: 65%;
+  width: 70%;
+}
+
+@media screen and (max-width: 992px) {
+  .contents .left-contents {
+    margin: 0 auto;
+    width: 640px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .contents .left-contents {
+    margin: 0 auto;
+    width: 100%;
+  }
 }
 
 .contents .right-contents {
-  padding-left: 30px;
-  width: 35%;
+  padding-left: 5%;
+  width: 25%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -141,8 +169,29 @@ header .header-bottom-bar .header-bottom-bar-line {
           align-items: center;
 }
 
+@media screen and (max-width: 992px) {
+  .contents .right-contents {
+    padding: 0;
+    margin: 0 auto;
+    width: 640px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .contents .right-contents {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+.contents .right-contents .right-content {
+  padding: 20px;
+  background-color: white;
+}
+
 .contents .right-contents .right-content .right-content-title {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
 }
 

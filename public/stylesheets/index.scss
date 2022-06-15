@@ -1,26 +1,30 @@
-@import "layout"; //layoutに記載の変数が使用できるようになる。
+@import "variable"; //変数の読み込み
 
-.left-content-title{
-  font-size: $font-size-big;
-  font-weight: bold;
-}
 .card{
   position: relative;
-  padding: 30px 0;
+  margin-bottom: 30px;
+  max-width: 640px;
+  background-color: $content-bg-color;
   a{
     position: absolute;
     height: 100%;
     width: 100%;
   }
-  .card-title{
-    margin: 30px 0;
-    height: 30px;
-    font-size: $font-size-big;
-    font-weight: bold;
+  .card-text{
+    padding: 0 20px;
+    height: 90px;
+    .card-text-date{
+      height: 40px;
+      line-height: 40px;
+    }
+    .card-text-title{
+      height: 50px;
+      font-size: $font-size-big;
+      font-weight: bold;
+    }
   }
   .card-content{
     .card-content-img{
-      max-width: 640px;
       img{
         object-fit: contain;
       }
