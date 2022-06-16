@@ -3,7 +3,7 @@
 .card{
   position: relative;
   margin-bottom: 30px;
-  max-width: 640px;
+  max-width: $content-size-tab;
   background-color: $content-bg-color;
   a{
     position: absolute;

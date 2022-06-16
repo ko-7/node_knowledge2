@@ -37,7 +37,7 @@ header{
     justify-content: end;
     font-weight: bold;
     @media screen and (max-width: $breakpoint-tab){
-      width: 640px;
+      width: $content-size-tab;
     }
     @media screen and (max-width: $breakpoint-sp){
       width: 100%;
@@ -86,7 +86,7 @@ header{
     width: 70%;
     @media screen and (max-width: $breakpoint-tab){
       margin: 0 auto;
-      width: 640px;
+      width: $content-size-tab;
     }
     @media screen and (max-width: $breakpoint-sp){
       margin: 0 auto;
@@ -94,7 +94,6 @@ header{
     }
   }
   .right-contents{
-    padding-left: 5%;
     width: 25%;
     display: flex;
     flex-direction: column;
@@ -102,7 +101,7 @@ header{
     @media screen and (max-width: $breakpoint-tab){
       padding: 0;
       margin: 0 auto;
-      width: 640px;
+      width: $content-size-tab;
     }
     @media screen and (max-width: $breakpoint-sp){
       padding: 0;
