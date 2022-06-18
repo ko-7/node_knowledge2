@@ -104,7 +104,7 @@ router.post('/article/edit', function(req, res, next){
 })
 
 // 記事ページ　削除---------------------------------------------
-router.post('/delete', (req, res, next) => {
+router.post('/article/delete', (req, res, next) => {
   if (logincheck(req, res)){ return };      //ログインチェック
   db.sequelize.sync()
   .then(() => db.Article.destroy({
@@ -112,7 +112,7 @@ router.post('/delete', (req, res, next) => {
     where: {id: req.query.id}
   }))
   .then(article => {
-    // res.redirect('/manage');
+    res.redirect('/manage');
     console.log('delete complete !!');
   }).catch(err => {
     var data = {

@@ -47,14 +47,8 @@
 </form>
 
 <button class="deletebutton" onclick="articledelete()">削除</button>
-<!-- <div class="deletewindow" id="deletewindow">
+<form name="deletearticle" method="post" action="/manage/article/delete?id=<%=form.id%>"></form>
 
-  <form method="post" action="/manage/article/delete" id="deletebutton">
-    <div class="form-send-button">
-      <input type="submit" value="削除">
-    </div>
-  </form>
-</div> -->
 <div id="rt-menu-button"></div>
 
 <script>
@@ -68,18 +62,18 @@
   function articledelete(){
     let judge = confirm("記事を削除して良いですか")
     if (judge == true){
-      var xhr = new XMLHttpRequest();
-      console.log('はいが押されました');
-      xhr.open('POST',"/manage/delete?id=" + <%=form.id%>);
-      console.log("/manage/delete?id=" + <%=form.id%>);
-      xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
-      xhr.send("string");
+      document.deletearticle.submit();
 
-      // delete後に画面遷移する
-      window.location.href = '/manage';
-      console.log('画面遷移完了！！');
-      window.location.href = '#';
-      console.log('リロードしました。')
+      // 非同期通信でPOST送信の例----------------------------------------------
+      // var xhr = new XMLHttpRequest();
+      // console.log('はいが押されました');
+      // xhr.open('POST',"/manage/article/delete?id=" + <%=form.id%>);
+      // console.log("/manage/article/delete?id=" + <%=form.id%>);
+      // xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+      // xhr.send("string");
+
+      // delete後に画面遷移する(非同期通信だとNodeのroutesからリダイレクトできなかった)
+      // window.location.href = '/manage';
     }
   }
 </script>
