@@ -4,7 +4,7 @@ const db = require('../models/index');
 
 // 一覧ページ----------------------------------------------
 router.get('/', function(req, res, next) {
-  if (logincheck(req, res)){ return };
+  if (logincheck(req, res)){ return };      //ログインチェック
   db.Article.findAll().then(articles => {
     var data = {
       contents: articles
@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
 
 // 記事ページ　新規作成-----------------------------------------
 router.get('/article/add', function(req, res, next) {
-  if (logincheck(req, res)){ return };
+  if (logincheck(req, res)){ return };      //ログインチェック
   var data = {
     //formの値はeditとaddで同じejsファイル使用してもエラー出ないようにするためのフェイクデータ。
     form: {id: 0, status: null, date: null, genre: null, title: null, headerimg:null, herderimgsource:null, body: null},
@@ -32,7 +32,7 @@ router.get('/article/add', function(req, res, next) {
   res.render('manage/article', data);
 });
 router.post('/article/add', (req, res, next) => {
-  if (logincheck(req, res)){ return };
+  if (logincheck(req, res)){ return };      //ログインチェック
   const form = {
     // 「req.body.～」でformから値受け取る
     status: req.body.status,
@@ -63,7 +63,7 @@ router.post('/article/add', (req, res, next) => {
 
 // 記事ページ 編集----------------------------------------------
 router.get('/article/edit', function(req, res, next) {
-  if (logincheck(req, res)){ return };
+  if (logincheck(req, res)){ return };      //ログインチェック
   db.Article.findByPk(req.query.id)
   .then(article => {
     var data = {
@@ -79,7 +79,7 @@ router.get('/article/edit', function(req, res, next) {
   });
 });
 router.post('/article/edit', function(req, res, next){
-  if (logincheck(req, res)){ return };
+  if (logincheck(req, res)){ return };      //ログインチェック
   db.sequelize.sync()
   .then(() => db.Article.update({
     status: req.body.status,
@@ -105,6 +105,7 @@ router.post('/article/edit', function(req, res, next){
 
 // 記事ページ　削除---------------------------------------------
 router.post('/delete', (req, res, next) => {
+  if (logincheck(req, res)){ return };      //ログインチェック
   db.sequelize.sync()
   .then(() => db.Article.destroy({
     // パラメータで値を受け取る
