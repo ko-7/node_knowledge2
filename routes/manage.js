@@ -114,7 +114,6 @@ router.post('/delete', (req, res, next) => {
   .then(article => {
     // res.redirect('/manage');
     console.log('delete complete !!');
-    res.render('/manage');
   }).catch(err => {
     var data = {
       err: err
