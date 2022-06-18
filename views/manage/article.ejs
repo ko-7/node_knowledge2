@@ -69,14 +69,17 @@
     let judge = confirm("記事を削除して良いですか")
     if (judge == true){
       var xhr = new XMLHttpRequest();
-      console.log('はいが押されました')
-      xhr.open('POST',"/manage/delete?id=" + <%=form.id%>)
-      console.log("/manage/delete?id=" + <%=form.id%>)
+      console.log('はいが押されました');
+      xhr.open('POST',"/manage/delete?id=" + <%=form.id%>);
+      console.log("/manage/delete?id=" + <%=form.id%>);
       xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
       xhr.send("string");
 
       // delete後に画面遷移する
-      window.location.href = 'https://www.knowledge2.site/manage'
+      window.location.href = '/manage';
+      console.log('画面遷移完了！！');
+      window.location.href = '#';
+      console.log('リロードしました。')
     }
   }
 </script>
