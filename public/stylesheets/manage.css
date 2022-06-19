@@ -25,7 +25,8 @@ form .form-group .article-header-title {
 }
 
 form .form-send-button {
-  margin: 0 auto;
+  width: 100%;
+  margin: 0px auto;
   padding: 30px;
   background-color: #000070;
   color: white;

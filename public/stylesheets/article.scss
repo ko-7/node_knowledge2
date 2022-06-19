@@ -10,6 +10,7 @@
     font-weight: bold;
   }
   .article-header-img{
+    margin: 0 auto;
     max-width: 640px;
     img{
       object-fit: contain;
@@ -32,6 +33,12 @@
     border-left: 12px solid $layout-bg-color;
     border-bottom: 3px double $layout-bg-color;
     font-size: $font-size-big;
+    font-weight: bold;
+  }
+  h3{
+    margin-bottom: 10px;
+    padding-left: 5px;
+    font-size: $font-size-small;
     font-weight: bold;
   }
   p{

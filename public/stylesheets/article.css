@@ -9,6 +9,7 @@
 }
 
 .article-header .article-header-img {
+  margin: 0 auto;
   max-width: 640px;
 }
 
@@ -36,6 +37,13 @@
   border-left: 12px solid #000070;
   border-bottom: 3px double #000070;
   font-size: 22px;
+  font-weight: bold;
+}
+
+.article-content h3 {
+  margin-bottom: 10px;
+  padding-left: 5px;
+  font-size: 16px;
   font-weight: bold;
 }
 
