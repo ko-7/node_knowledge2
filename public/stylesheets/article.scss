@@ -1,7 +1,7 @@
 @import "variable"; //変数の読み込み
 
 .article{
-  padding-top: 50px;
+  padding: 50px;
   width: $main-content-size;
   display: flex;
   flex-direction: column;

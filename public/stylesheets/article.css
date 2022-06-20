@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .article {
-  padding-top: 50px;
+  padding: 50px;
   width: 700px;
   display: -webkit-box;
   display: -ms-flexbox;
