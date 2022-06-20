@@ -1,7 +1,7 @@
 @charset "UTF-8";
 .article {
-  padding: 50px;
-  width: 700px;
+  padding: 50px 0;
+  max-width: 720px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,6 +13,7 @@
       -ms-flex-align: center;
           align-items: center;
   background-color: white;
+  word-break: break-all;
 }
 
 .article .article-header {
@@ -48,8 +49,7 @@
 }
 
 .article .article-content {
-  width: 640px;
-  word-break: break-all;
+  max-width: 640px;
 }
 
 .article .article-content a {

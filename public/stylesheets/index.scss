@@ -2,8 +2,10 @@
 
 .card{
   position: relative;
+  margin: 0 auto;
   margin-bottom: 30px;
-  max-width: $main-content-size;
+  max-width: 640px;
+  // max-width: $main-content-size;
   background-color: $content-bg-color;
   a{
     position: absolute;
