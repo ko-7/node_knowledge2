@@ -85,7 +85,7 @@ header{
     flex-direction: column;
   }
   .left-contents{
-    max-width: $content-size-pc;
+    max-width: $main-content-size;
     @media screen and (max-width: $breakpoint-tab){
       margin: 0 auto;
       width: $content-size-tab;
