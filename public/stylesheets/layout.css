@@ -175,6 +175,7 @@ header .header-bottom-bar .header-bottom-bar-line {
   .contents .right-contents {
     padding: 0;
     margin: 0 auto;
+    margin-top: 30px;
     width: 720px;
   }
 }
@@ -183,12 +184,13 @@ header .header-bottom-bar .header-bottom-bar-line {
   .contents .right-contents {
     padding: 0;
     margin: 0 auto;
+    margin-top: 30px;
     width: 100%;
   }
 }
 
 .contents .right-contents .right-content {
-  padding: 20px;
+  padding: 30px;
   background-color: white;
 }
 

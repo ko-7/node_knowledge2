@@ -104,15 +104,17 @@ header{
     @media screen and (max-width: $breakpoint-tab){
       padding: 0;
       margin: 0 auto;
+      margin-top: 30px;
       width: $content-size-tab;
     }
     @media screen and (max-width: $breakpoint-sp){
       padding: 0;
       margin: 0 auto;
+      margin-top: 30px;
       width: 100%;
     }
     .right-content{
-      padding: 20px;
+      padding: 30px;
       background-color: $content-bg-color;
       .right-content-title{
         font-size: $font-size-big;
