@@ -49,6 +49,7 @@
 
 .article .article-content {
   width: 640px;
+  word-break: break-all;
 }
 
 .article .article-content a {
