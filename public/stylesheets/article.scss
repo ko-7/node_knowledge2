@@ -8,6 +8,12 @@
   align-items: center; 
   background-color: $content-bg-color;
   word-break: break-all;
+  @media screen and (max-width: $breakpoint-tab){
+    max-width: $main-content-size;
+  }
+  @media screen and (max-width: $breakpoint-sp){
+    width: 100%;
+  }
   .article-header{
     width: 640px;
     .date{
@@ -35,6 +41,12 @@
   
   .article-content{
     max-width: 640px;
+    @media screen and (max-width: $breakpoint-tab){
+      max-width: 640px;
+    }
+    @media screen and (max-width: $breakpoint-sp){
+      width: 100%;
+    }
     a{
       text-decoration: underline;
       color: blue;
