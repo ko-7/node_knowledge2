@@ -26,8 +26,10 @@
     }
     .article-header-img{
       margin: 0 auto;
+      max-width: 640px;
       img{
         object-fit: contain;
+        width: 100%;
       }
     }
     .article-header-img-source{

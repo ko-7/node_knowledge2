@@ -44,11 +44,13 @@
 
 .article .article-header .article-header-img {
   margin: 0 auto;
+  max-width: 640px;
 }
 
 .article .article-header .article-header-img img {
   -o-object-fit: contain;
      object-fit: contain;
+  width: 100%;
 }
 
 .article .article-header .article-header-img-source {
