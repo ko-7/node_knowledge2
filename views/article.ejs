@@ -1,12 +1,17 @@
-<!-- article-header ---------------------------------------------------------->
-<div class="article-header">
-  <div class="date"><%= form.date %></div>
-  <h1 class="article-header-title"><%= form.title %></h1>
-  <p class="article-header-img">
-    <img src="<%= form.headerimg %>">
-  </p>
-  <p class="article-header-img-source"><%= form.headerimgsource %></p>
+<div class="article">
+
+  <!-- article-header ---------------------------------------------------------->
+  <div class="article-header">
+    <div class="date"><%= form.date %></div>
+    <h1 class="article-header-title"><%= form.title %></h1>
+    <p class="article-header-img">
+      <img src="<%= form.headerimg %>">
+    </p>
+    <p class="article-header-img-source"><%= form.headerimgsource %></p>
+  </div>
+  
+  <%- form.body %>
+  
 </div>
-
-<%- form.body %>
-
+  
+  

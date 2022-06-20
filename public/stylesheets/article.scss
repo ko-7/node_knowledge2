@@ -1,89 +1,98 @@
 @import "variable"; //変数の読み込み
 
-.article-header{
-  .date{
-    font-size: $font-size-small;
-  }
-  .article-header-title{
-    margin: 30px 0;
-    font-size: $font-size-big;
-    font-weight: bold;
-  }
-  .article-header-img{
-    margin: 0 auto;
-    max-width: 640px;
-    img{
-      object-fit: contain;
+.article{
+  padding-top: 50px;
+  width: $main-content-size;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $content-bg-color;
+  .article-header{
+    width: 640px;
+    .date{
+      font-size: $font-size-small;
     }
-  }
-  .article-header-img-source{
-    font-size: $font-size-small;
-  }
-  p{
-    line-height: $font-size-small*2;
-    margin-bottom: 30px;
-  }
-}
-
-.article-content{
-  margin: 100px 0;
-  a{
-    text-decoration: underline;
-    color: blue;
-  }
-  h2{
-    margin-top: 80px;
-    margin-bottom: 30px;
-    padding-left: 5px;
-    border-left: 12px solid $layout-bg-color;
-    border-bottom: 3px double $layout-bg-color;
-    font-size: $font-size-big;
-    font-weight: bold;
-  }
-  h3{
-    margin-bottom: 10px;
-    font-size: $font-size-small;
-    line-height: $font-size-big;
-    font-weight: bold;
-    vertical-align: center;
-    &::before{
-      content: '◆';
-      margin-right: 5px;
-      position: relative;
-      top: calc((#{$font-size-big} - #{$font-size-small})/2);
-      color: $layout-bg-color;
+    .article-header-title{
+      margin: 30px 0;
       font-size: $font-size-big;
+      font-weight: bold;
+    }
+    .article-header-img{
+      margin: 0 auto;
+      img{
+        object-fit: contain;
+      }
+    }
+    .article-header-img-source{
+      font-size: $font-size-small;
+    }
+    p{
+      line-height: $font-size-small*2;
+      margin-bottom: 30px;
     }
   }
-  p{
-    line-height: $font-size-small*2;
-    margin-bottom: 30px;
-  }
-  ul{
-    margin-top: 10px;
-    margin-bottom: 30px;
-    padding: 20px 10px;
-    line-height: $font-size-small*2.5;
-    background-color: rgba(0,0,112,0.08);
-    border: 3px solid $layout-bg-color;
-  }
-  table{
-    margin-top: 10px;
-    margin-bottom: 80px;
-    border-collapse: collapse;
-    th{
-      background-color: $layout-bg-color;
-      color: white;
-      text-align: center;
+  
+  .article-content{
+    width: 640px;
+    margin: 100px 0;
+    a{
+      text-decoration: underline;
+      color: blue;
     }
-    th, td{
-      border: solid 1px $layout-bg-color;
-      padding: 10px;
+    h2{
+      margin-top: 80px;
+      margin-bottom: 30px;
+      padding-left: 5px;
+      border-left: 12px solid $layout-bg-color;
+      border-bottom: 3px double $layout-bg-color;
+      font-size: $font-size-big;
+      font-weight: bold;
     }
-  }
-  span{
-    font-size: 18px;
-    font-weight: bold;
-    border-bottom: 2px solid $layout-bg-color;
+    h3{
+      margin-bottom: 10px;
+      font-size: $font-size-small;
+      line-height: $font-size-big;
+      font-weight: bold;
+      vertical-align: center;
+      &::before{
+        content: '◆';
+        margin-right: 5px;
+        position: relative;
+        top: calc((#{$font-size-big} - #{$font-size-small})/2);
+        color: $layout-bg-color;
+        font-size: $font-size-big;
+      }
+    }
+    p{
+      line-height: $font-size-small*2;
+      margin-bottom: 30px;
+    }
+    ul{
+      margin-top: 10px;
+      margin-bottom: 30px;
+      padding: 20px 10px;
+      line-height: $font-size-small*2.5;
+      background-color: rgba(0,0,112,0.08);
+      border: 3px solid $layout-bg-color;
+    }
+    table{
+      margin-top: 10px;
+      margin-bottom: 80px;
+      border-collapse: collapse;
+      th{
+        background-color: $layout-bg-color;
+        color: white;
+        text-align: center;
+      }
+      th, td{
+        border: solid 1px $layout-bg-color;
+        padding: 10px;
+      }
+    }
+    span{
+      font-size: 18px;
+      font-weight: bold;
+      border-bottom: 2px solid $layout-bg-color;
+    }
   }
 }
