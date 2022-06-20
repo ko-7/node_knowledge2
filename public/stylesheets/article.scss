@@ -13,9 +13,10 @@
   }
   @media screen and (max-width: $breakpoint-sp){
     width: 100%;
+    padding: 30px 10px;
   }
   .article-header{
-    width: 640px;
+    max-width: 640px;
     .date{
       font-size: $font-size-small;
     }
@@ -43,12 +44,7 @@
   
   .article-content{
     max-width: 640px;
-    @media screen and (max-width: $breakpoint-tab){
-      max-width: 640px;
-    }
-    @media screen and (max-width: $breakpoint-sp){
-      width: 100%;
-    }
+    
     a{
       text-decoration: underline;
       color: blue;
