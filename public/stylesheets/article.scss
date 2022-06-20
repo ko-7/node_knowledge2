@@ -16,6 +16,7 @@
     padding: 30px 10px;
   }
   .article-header{
+    width: 100%;
     max-width: 640px;
     .date{
       font-size: $font-size-small;
@@ -43,6 +44,7 @@
   }
   
   .article-content{
+    width: 100%;
     max-width: 640px;
     
     a{
