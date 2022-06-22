@@ -6,7 +6,8 @@
         "require": true,
         "rejectUnauthorized": false
       }
-    }
+    },
+    "timezone": "+09:00"
   },
   "test": {
     "use_env_variable": "DATABASE_URL",
@@ -15,7 +16,8 @@
         "require": true,
         "rejectUnauthorized": false
       }
-    }
+    },
+    "timezone": "+09:00"
   },
   "production": {
     "use_env_variable": "DATABASE_URL",
@@ -24,6 +26,7 @@
         "require": true,
         "rejectUnauthorized": false
       }
-    }
+    },
+    "timezone": "+09:00"
   }
 }

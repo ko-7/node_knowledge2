@@ -5,7 +5,9 @@
   <div class="card">
     <a href="/article?id=<%= contents[i].id %>"></a>
     <div class="card-text">
-      <div class="card-text-date"><%= contents[i].date %></div>
+      <!-- <div class="card-text-date"><%= contents[i].date %></div> -->
+      <div class="card-text-date"><%= contents[i].createdAt %></div>
+      <div class="card-text-date"><%= contents[i].updatedAt %></div>
       <div class="card-text-title"><%= contents[i].title %></div>
     </div>
     <div class="card-content">

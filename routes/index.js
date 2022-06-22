@@ -4,6 +4,9 @@ const db = require('../models/index');
 
 router.get('/', function(req, res, next) {
   db.Article.findAll({
+    order:[
+      ['createdAt', 'DESC']
+    ],
     where: {//status=trueのものだけ取得
       status: true
     }
