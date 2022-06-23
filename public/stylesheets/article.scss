@@ -107,5 +107,15 @@
       font-weight: bold;
       border-bottom: 2px solid $layout-bg-color;
     }
+    pre{
+      padding: 0 10px;
+      background-color: #364549;
+      code{
+        text-align: center;
+        color: #8bdf4c;
+        font-family: Consolas;
+        font-size: cals(#{$font-size-small} - 2px);
+      }
+    }
   }
 }

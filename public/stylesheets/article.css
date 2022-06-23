@@ -138,4 +138,16 @@
   font-weight: bold;
   border-bottom: 2px solid #000070;
 }
+
+.article .article-content pre {
+  padding: 0 10px;
+  background-color: #364549;
+}
+
+.article .article-content pre code {
+  text-align: center;
+  color: #8bdf4c;
+  font-family: Consolas;
+  font-size: cals(16px - 2px);
+}
 /*# sourceMappingURL=article.css.map */

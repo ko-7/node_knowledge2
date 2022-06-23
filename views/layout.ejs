@@ -58,6 +58,10 @@
       <p>©2022.04.12 All right reserve</p>
     </footer>
 
-    
+    <!-- codeタグ内を文字列として表示する -->
+    <script>
+      var code = document.querySelector('code');
+      code.innerHTML = code.innerHTML.replace(/</g,'&lt;').replace(/>/,'&gt;');
+    </script>
   </body>
 </html>

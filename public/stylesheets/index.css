@@ -17,13 +17,17 @@
   height: 90px;
 }
 
+@media screen and (max-width: 750px) {
+  .card .card-text {
+    height: 100px;
+  }
+}
+
 .card .card-text .card-text-date {
-  height: 40px;
   line-height: 40px;
 }
 
 .card .card-text .card-text-title {
-  height: 50px;
   font-size: 22px;
   font-weight: bold;
 }
