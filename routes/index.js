@@ -5,7 +5,7 @@ const db = require('../models/index');
 router.get('/', function(req, res, next) {
   db.Article.findAll({
     order:[
-      ['createdAt', 'DESC']
+      ['createdAt', 'DESC'] //作成日時降順に並び替え
     ],
     where: {//status=trueのものだけ取得
       status: true

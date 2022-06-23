@@ -1,17 +1,17 @@
 // 開発用のapp.js  https接続をしない！！
 
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
 const session = require('express-session');
 const expressLayouts = require('express-ejs-layouts');
 
-var indexRouter = require('./routes/index');
-var manageRouter = require('./routes/manage');
+let indexRouter = require('./routes/index');
+let manageRouter = require('./routes/manage');
 
-var app = express();
+let app = express();
 
 // app.use(function(req, res, next) {
 //   res.header("Access-Control-Allow-Origin", '*');
@@ -36,7 +36,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// セッション利用の準備(4-3-3 手順２)  ※「var app = express();」と「app.use('/', indexRouter);」の間に記述必要有り！
+// セッション利用の準備(4-3-3 手順２)  ※「let app = express();」と「app.use('/', indexRouter);」の間に記述必要有り！
 const session_opt = {                   //セッションのオプション設定の値をsession_optに格納している。
   secret: 'keyboard cat',             //クライアントと通信する際の秘密鍵（ハッシュのキー）
   resave: false,                      //セッションストア？に強制的に値を保存する設定

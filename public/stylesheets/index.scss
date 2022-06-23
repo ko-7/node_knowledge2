@@ -15,14 +15,16 @@
   .card-text{
     padding: 0 20px;
     height: 90px;
+    @media screen and (max-width: $breakpoint-sp){
+      height: 100px;
+    }
     .card-text-date{
-      height: 40px;
       line-height: 40px;
     }
     .card-text-title{
-      height: 50px;
       font-size: $font-size-big;
       font-weight: bold;
+      
     }
   }
   .card-content{
