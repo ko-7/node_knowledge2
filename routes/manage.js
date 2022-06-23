@@ -5,7 +5,11 @@ const db = require('../models/index');
 // 一覧ページ----------------------------------------------
 router.get('/', function(req, res, next) {
   if (logincheck(req, res)){ return };      //ログインチェック
-  db.Article.findAll().then(articles => {
+  db.Article.findAll({
+    order:[
+      ['createdAt', 'DESC'] //作成日時降順に並び替え
+    ],
+  }).then(articles => {
     var data = {
       contents: articles
     }
