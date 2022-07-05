@@ -80,6 +80,11 @@
       line-height: $font-size-small*2;
       margin-bottom: 20px;
     }
+    span{
+      font-size: 18px;
+      font-weight: bold;
+      border-bottom: 2px solid $layout-bg-color;
+    }
     ul{
       margin-top: 10px;
       margin-bottom: 30px;
@@ -101,11 +106,6 @@
         border: solid 1px $layout-bg-color;
         padding: 10px;
       }
-    }
-    span{
-      font-size: 18px;
-      font-weight: bold;
-      border-bottom: 2px solid $layout-bg-color;
     }
     pre{
       padding: 0 10px;

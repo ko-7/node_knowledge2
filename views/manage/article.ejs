@@ -6,7 +6,8 @@
   <div class="article-header">
     <div class="form-group">
       <label for="status">
-      <input type="checkbox" name="status" id="status" selected="<%= form.status %>">
+      <input type="checkbox" name="status" id="status check" selected="<%= form.status %>">
+      <!-- <input type="checkbox" name="status" id="status check" value=""> -->
       公開する</label>
     </div>
     <div class="form-group date">
@@ -52,10 +53,21 @@
 <div id="rt-menu-button"></div>
 
 <script>
+  // checkboxからtrue,falseの値を取得する　※通常のcheckboxでは一度onになるとチェック外してもonのままになる。
+  let isCheckStatus;
+  $("#check").on("click", function(){
+    isCheckStatus = document.getElementById('check');
+  if($(this).prop("checked") == true){
+    isCheckStatus.setAttribute("checked", "checked");
+  }else{
+    isCheckStatus.removeAttribute("checked", "");
+  }
+  });
+
   // 読み込んだ記事が公開済みならstatusチェックボックスにチェックを入れる
   if (<%= form.status %> === true) {
-    let el = document.getElementById('status')
-    el.setAttribute("checked","checked")
+    let el = document.getElementById('status');
+    el.setAttribute("checked","checked");
   }
 
   // 記事削除の確認

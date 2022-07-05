@@ -107,6 +107,12 @@
   margin-bottom: 20px;
 }
 
+.article .article-content span {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 2px solid #000070;
+}
+
 .article .article-content ul {
   margin-top: 10px;
   margin-bottom: 30px;
@@ -131,12 +137,6 @@
 .article .article-content table th, .article .article-content table td {
   border: solid 1px #000070;
   padding: 10px;
-}
-
-.article .article-content span {
-  font-size: 18px;
-  font-weight: bold;
-  border-bottom: 2px solid #000070;
 }
 
 .article .article-content pre {

@@ -12,6 +12,12 @@
   
   <%- form.body %>
   
+  <!-- codeタグ内を文字列として表示する -->
+  <script>
+    var code = document.querySelector('code');
+    code.innerHTML = code.innerHTML.replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    code.innerHTML = code.innerHTML.replace(/&lt;!--|--&gt;/g, '');
+  </script>
 </div>
   
   
