@@ -12,7 +12,7 @@
   
   <%- form.body %>
   
-  <!-- codeタグ内を文字列として表示する -->
+  <!-- codeタグ内を文字列として表示する ※<code>タグ内は全てコメントアウトする！ -->
   <script>
     var code = document.querySelector('code');
     code.innerHTML = code.innerHTML.replace(/</g,'&lt;').replace(/>/g,'&gt;');

@@ -7,8 +7,8 @@ router.get('/', function(req, res, next) {
     order:[
       ['createdAt', 'DESC'] //作成日時降順に並び替え
     ],
-    where: {//status=trueのものだけ取得
-      status: true
+    where: {//status=releaseのものだけ取得
+      status: "release"
     }
   }).then(articles => {
     let data = {

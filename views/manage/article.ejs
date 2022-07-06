@@ -4,39 +4,45 @@
   <input type="hidden" name="id" value="<%= form.id %>">
   <!-- article-header ---------------------------------------------------------->
   <div class="article-header">
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="status">
       <input type="checkbox" name="status" id="status check" selected="<%= form.status %>">
-      <!-- <input type="checkbox" name="status" id="status check" value=""> -->
       公開する</label>
+    </div> -->
+    <div class="form-group">
+      <p>◆ステータス</p>
+      <select name="status">
+        <option value="draft">Draft...✋</option>
+        <option value="release" id="status_release">Release👏</option>
+      </select>
     </div>
     <div class="form-group date">
-      <label for="date">作成・編集日時</label>
+      <label for="date">◆作成・編集日時</label>
       <input type="text" name="date" id="date" value="<%= form.date %>">
     </div>
     <div class="form-group date">
-      <label for="genre">ジャンル</label>
+      <label for="genre">◆ジャンル</label>
       <input type="text" name="genre" id="genre" value="<%= form.genre %>">
     </div>
     <div class="form-group">
-      <label for="title">記事タイトル</label>
+      <label for="title">◆記事タイトル</label>
       <h1 class="article-header-title">
         <input type="text" name="title" id="title" value="<%= form.title %>">
       </h1>
     </div>
     <div class="form-group">
-      <label for="headerimg">ヘッダー画像URL</label>
+      <label for="headerimg">◆ヘッダー画像URL</label>
       <input type="text" name="headerimg" id="headerimg" value="<%= form.headerimg %>">
     </div>
     <div class="form-group">
-      <label for="headerimgsource">ヘッダー画像の出典</label>
+      <label for="headerimgsource">◆ヘッダー画像の出典</label>
       <input type="text" name="headerimgsource" id="headerimgsource" value="<%= form.headerimgsource %>">
     </div>
   </div>
 
   <!-- article-content -->
   <div class="form-group">
-    <label for="body">記事本文</label>
+    <label for="body">◆記事本文</label>
     <textarea name="body" id="body editor" rows="30"><%= form.body %></textarea>
   </div>
 
@@ -53,21 +59,10 @@
 <div id="rt-menu-button"></div>
 
 <script>
-  // checkboxからtrue,falseの値を取得する　※通常のcheckboxでは一度onになるとチェック外してもonのままになる。
-  let isCheckStatus;
-  $("#check").on("click", function(){
-    isCheckStatus = document.getElementById('check');
-  if($(this).prop("checked") == true){
-    isCheckStatus.setAttribute("checked", "checked");
-  }else{
-    isCheckStatus.removeAttribute("checked", "");
-  }
-  });
-
   // 読み込んだ記事が公開済みならstatusチェックボックスにチェックを入れる
-  if (<%= form.status %> === true) {
-    let el = document.getElementById('status');
-    el.setAttribute("checked","checked");
+  if ("<%= form.status %>" === "release") {
+    let el = document.getElementById('status_release');
+    el.setAttribute("selected","selected");
   }
 
   // 記事削除の確認
