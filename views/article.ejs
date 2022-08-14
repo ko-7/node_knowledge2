@@ -12,6 +12,15 @@
   
   <%- form.body %>
   
+  <p style="margin:100px 0 30px 0;">
+    〇〇〇〇〇以下はマークダウンをHTMLに変換するテストです。〇〇〇〇〇
+  </p>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <div class="article-contents" id="markdown-content"></div>
+  <script>
+    document.getElementById('markdown-content').innerHTML = marked.parse("<%- form.body %>");
+  </script>
+
   <!-- codeタグ内を文字列として表示する ※<code>タグ内は全てコメントアウトする！ -->
   <script>
     var code = document.querySelector('code');

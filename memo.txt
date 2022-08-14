@@ -67,3 +67,19 @@
     ※1つ戻る：npx sequelize-cli db:migrate:undo --env development
     ※全部戻る：npx sequelize-cli db:migrate:undo:all (--to xxxxxxxxx-create-post.js) ()内追加で特定の位置に戻る！
 手順４：models/～.jsの編集
+
+〇マークダウンをHTMLに変換するパッケージの導入（フロントで変換する方法！）
+手順１：CDNでパッケージを読み込む
+　<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+手順２：表示させる.ejsファイルに以下コード追記
+　・html変換後のコードを表示させる場所に下コード書く
+　    <div id="markdown-content"></div>　　※id名は任意
+　・markdown⇒htmlに変換処理するコード
+      <script>
+        document.getElementById('markdown-content').innerHTML = marked.parse("[処理対象の文字列]");
+      </script>
+手順３：CSSを書いてスタイルを整える
+
+〇CSRF（クロスサイトリクエストフォージェリ）
+　偽のサイトからのサーバーへのポストを判別する！
+〇RSPEC（テスト用のツール）

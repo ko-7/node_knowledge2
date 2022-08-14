@@ -1,4 +1,4 @@
-// 本番環境用のapp.js!!　　httpsにリダイレクトする！！
+// 開発用のapp.js  https接続をしない！！
 
 let createError = require('http-errors');
 let express = require('express');
@@ -8,28 +8,18 @@ let logger = require('morgan');
 const session = require('express-session');
 const expressLayouts = require('express-ejs-layouts');
 
-let http = require('http');             //http https リダイレクトに使用
-let enforce = require('express-sslify');//http https リダイレクトに使用
-
 let indexRouter = require('./routes/index');
 let manageRouter = require('./routes/manage');
 
 let app = express();
 
-// http https リダイレクト----------
-app.use(enforce.HTTPS({ trustProtoHeader: true }))
-http.createServer(app).listen(app.get('port'), function() {
-    console.log('Express server listening on port ' + app.get('port'));
-});
-// -------------------------------
-
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", '*');
-  res.header("Access-Control-Allow-Credentials", true);
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-  res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
-  next();
-});
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", '*');
+//   res.header("Access-Control-Allow-Credentials", true);
+//   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+//   res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+//   next();
+// });
 
 
 

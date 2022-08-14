@@ -64,6 +64,92 @@
   margin-bottom: 30px;
 }
 
+.article .article-contents {
+  width: 100%;
+  max-width: 640px;
+}
+
+.article .article-contents a {
+  text-decoration: underline;
+  color: blue;
+}
+
+.article .article-contents h2 {
+  margin-top: 80px;
+  margin-bottom: 30px;
+  padding-left: 5px;
+  border-left: 12px solid #000070;
+  border-bottom: 3px double #000070;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.article .article-contents h3 {
+  margin-top: 80px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: bold;
+  vertical-align: center;
+}
+
+.article .article-contents h3::before {
+  content: '◆';
+  margin-right: 5px;
+  position: relative;
+  top: calc((22px - 16px)/2);
+  color: #000070;
+  font-size: 22px;
+}
+
+.article .article-contents p {
+  line-height: 32px;
+  margin-bottom: 20px;
+}
+
+.article .article-contents span {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 2px solid #000070;
+}
+
+.article .article-contents ul {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 20px 10px;
+  line-height: 40px;
+  background-color: rgba(0, 0, 112, 0.08);
+  border: 3px solid #000070;
+}
+
+.article .article-contents table {
+  margin-top: 10px;
+  margin-bottom: 80px;
+  border-collapse: collapse;
+}
+
+.article .article-contents table th {
+  background-color: #000070;
+  color: white;
+  text-align: center;
+}
+
+.article .article-contents table th, .article .article-contents table td {
+  border: solid 1px #000070;
+  padding: 10px;
+}
+
+.article .article-contents pre {
+  padding: 0 20px;
+  background-color: #364549;
+}
+
+.article .article-contents pre code {
+  color: #8bdf4c;
+  font-family: Consolas;
+  font-size: cals(16px - 2px);
+}
+
 .article .article-content {
   width: 100%;
   max-width: 640px;

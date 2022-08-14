@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/index');
 
+
 router.get('/', function(req, res, next) {
   db.Article.findAll({
     order:[

@@ -20,6 +20,7 @@
     "express-session": "^1.17.2",
     "express-sslify": "^1.2.0",
     "http-errors": "~1.6.3",
+    "marked": "^4.0.17",
     "morgan": "~1.9.1",
     "pg": "^8.7.3",
     "sequelize": "^6.18.0",
